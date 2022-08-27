@@ -1,0 +1,8 @@
+<h2>Discover Amazing Chinese Food Recipes Here!</h2>
+<h3>Top Recipes</h3>
+<div class="recipes-menu">
+    <!-- insert the current iteration's hero.id into each routerLink -->
+    <a *ngFor="let recipe of recipes" routerLink="/detail/{{recipe.id}}">
+        {{recipe.name}}
+    </a>
+</div>
