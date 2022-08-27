@@ -9,6 +9,12 @@ input {
     padding: .5rem;
 }
 
+#recipe-desp {
+    display: block;
+    width: 300px;
+    height: 600px;
+}
+
 button {
     margin-top: 20px;
     background-color: #eee;

@@ -4,7 +4,7 @@
     <div>
         <label for="recipe-name"> Dish Name: </label>
         <input id="recipe-name" [(ngModel)]="recipe.name" placeholder="Dish Name" />
-        <p>{{recipe.description}}</p>
+        <textarea id="recipe-desp" [(ngModel)]="recipe.description" placeholder="Dish Recipe"></textarea>
     </div>
     <button type="button" (click)="save()">save</button>
 
