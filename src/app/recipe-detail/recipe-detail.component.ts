@@ -19,6 +19,13 @@ export class RecipeDetailComponent implements OnInit {
     private location: Location //an Angular service for interacting with the browser. This service lets you navigate back to the previous view.
   ) { }
 
+  save(): void {
+    if (this.recipe) {
+      this.recipeService.updateRecipe(this.recipe)
+        .subscribe(() => this.goBack());
+    }
+  }
+
   getRecipe(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.recipeService.getRecipe(id)

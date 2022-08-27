@@ -6,5 +6,7 @@
         <input id="recipe-name" [(ngModel)]="recipe.name" placeholder="Dish Name" />
         <p>{{recipe.description}}</p>
     </div>
+    <button type="button" (click)="save()">save</button>
+
     <button (click)="goBack()">Go Back</button>
 </div>

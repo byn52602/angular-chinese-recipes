@@ -12,6 +12,20 @@ export class RecipesComponent implements OnInit {
   recipes: Recipe[] = [];
   // selectedRecipe?: Recipe;
 
+  add(name: string, description: string): void {
+    name = name.trim();
+    if (!name || !description) { return; }
+    this.recipeService.addRecipe({ name, description } as Recipe)
+      .subscribe(recipe => {
+        this.recipes.push(recipe);
+      });
+  }
+
+  delete(recipe: Recipe): void {
+    this.recipes = this.recipes.filter(h => h !== recipe);
+    this.recipeService.deleteRecipe(recipe.id).subscribe();
+  }
+
   getRecipes(): void {
     // The assignment occurs synchronously
     // this.heroes = this.heroService.getHeroes();
